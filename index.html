@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TechWave - Podcast Website</title>
+
+    <!-- Google Fonts: Manrope -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <script src="https://kit.fontawesome.com/97f48164b9.js" crossorigin="anonymous"></script>
+
+    <!-- Tailwind CSS (CDN) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Manrope', 'sans-serif'],
+                    },
+                    colors: {
+                        'tech-dark': '#0f0f0f',
+                        'tech-gray': '#1a1a1a',
+                        'tech-accent': '#C950AA', // Placeholder accent
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="bg-black text-white font-sans antialiased overflow-x-hidden">
+
+    <!-- Header / Navbar -->
+    <header class="fixed w-full top-0 z-50 transition-all duration-300 bg-transparent" id="navbar">
+        <div class="container mx-auto px-4 md:px-8 h-20 flex items-center justify-between">
+            <!-- Logo -->
+            <div class="flex items-center gap-2">
+                <span
+                    class="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-pink-600">TechWave</span>
+            </div>
+
+            <!-- Desktop Menu -->
+            <nav class="hidden md:flex items-center gap-8">
+                <a href="#home" class="text-gray-300 hover:text-white transition-colors">Home</a>
+                <a href="#about" class="text-gray-300 hover:text-white transition-colors">About</a>
+                <a href="#podcasts" class="text-gray-300 hover:text-white transition-colors">Podcasts</a>
+                <a href="#hosts" class="text-gray-300 hover:text-white transition-colors">Hosts</a>
+            </nav>
+
+            <!-- Subscribe Button (Desktop) -->
+            <div class="hidden md:block">
+                <a href="#"
+                    class="px-6 py-2.5 rounded-full bg-gradient-to-r from-purple-600 to-pink-600 text-white font-semibold hover:opacity-90 transition-opacity">
+                    Subscribe
+                </a>
+            </div>
+
+            <!-- Mobile Menu Toggle (Checkbox Hack) -->
+            <div class="md:hidden flex items-center">
+                <label for="menu-toggle" class="cursor-pointer text-2xl z-50 relative">
+                    <i class="fa-solid fa-bars text-white" id="menu-icon"></i>
+                </label>
+                <input type="checkbox" id="menu-toggle" class="hidden">
+
+                <!-- Mobile Menu Overlay -->
+                <div
+                    class="mobile-menu fixed inset-0 bg-black/95 flex flex-col items-center justify-center gap-8 text-xl transform translate-x-full transition-transform duration-300 z-40">
+                    <a href="#home" class="mobile-link">Home</a>
+                    <a href="#about" class="mobile-link">About</a>
+                    <a href="#podcasts" class="mobile-link">Podcasts</a>
+                    <a href="#hosts" class="mobile-link">Hosts</a>
+                    <a href="#"
+                        class="px-8 py-3 rounded-full bg-gradient-to-r from-purple-600 to-pink-600 text-white font-semibold">Subscribe</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content Placeholder -->
+    <main>
+        <!-- Hero / Banner Section -->
+        <section class="relative min-h-screen flex items-center justify-center pt-20 overflow-hidden" id="home">
+            <!-- Background Image -->
+            <div class="absolute inset-0 z-0">
+                <img src="assets/hero-bg.png" alt="Hero Background" class="w-full h-full object-cover opacity-60">
+                <!-- Overlay gradient for better text readability -->
+                <div class="absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-black"></div>
+            </div>
+
+            <div class="container mx-auto px-4 z-10 relative flex flex-col items-center text-center">
+                <!-- Hero Circle Image -->
+                <div class="mb-8 relative group">
+                    <img src="assets/hero-circle.png" alt="Podcast Visual"
+                        class="w-64 md:w-80 lg:w-96 animate-pulse-slow relative z-10">
+                    <!-- Glow Effect -->
+                    <div
+                        class="absolute inset-0 bg-purple-600 rounded-full blur-3xl opacity-20 group-hover:opacity-40 transition-opacity">
+                    </div>
+
+                    <!-- "New" Badge (Challenge Requirement) -->
+                    <div
+                        class="absolute top-0 right-0 transform translate-x-1/4 -translate-y-1/4 bg-white text-black text-xs font-bold px-3 py-1 rounded-full shadow-lg z-20">
+                        New
+                    </div>
+                </div>
+
+                <!-- Text Content -->
+                <h1 class="text-4xl md:text-6xl lg:text-7xl font-extrabold mb-6 tracking-tight">
+                    Listen to the <br class="md:hidden" />
+                    <span
+                        class="bg-clip-text text-transparent bg-gradient-to-r from-blue-400 via-purple-500 to-pink-500">
+                        Future of Tech
+                    </span>
+                </h1>
+
+                <p class="text-gray-300 text-lg md:text-xl max-w-2xl mb-10 leading-relaxed">
+                    Join us as we explore the latest innovations, AI breakthroughs, and the stories behind the code.
+                    Your weekly dose of tech insight.
+                </p>
+
+                <!-- Call to Action Buttons -->
+                <div class="flex flex-col sm:flex-row items-center gap-4">
+                    <button
+                        class="px-8 py-4 rounded-full bg-gradient-to-r from-purple-600 to-pink-600 text-white font-bold text-lg hover:shadow-lg hover:shadow-purple-500/30 transition-all transform hover:-translate-y-1">
+                        <i class="fa-solid fa-play mr-2"></i> Start Listening
+                    </button>
+                    <button
+                        class="px-8 py-4 rounded-full border border-gray-600 hover:border-white text-gray-300 hover:text-white font-semibold text-lg hover:bg-white/5 transition-all">
+                        <i class="fa-solid fa-bookmark mr-2"></i> Subscribe
+                    </button>
+                </div>
+
+                <!-- Supported Platforms (Optional Polish) -->
+                <div
+                    class="mt-12 flex items-center gap-6 opacity-60 grayscale hover:grayscale-0 transition-all duration-500">
+                    <p class="text-sm uppercase tracking-widest text-gray-500">Listen on</p>
+                    <div class="flex gap-4">
+                        <img src="assets/UI/spotify.png" alt="Spotify" class="h-6">
+                        <img src="assets/UI/apple-podcast.png" alt="Apple" class="h-6">
+                        <img src="assets/UI/youtube-podcast.png" alt="YouTube" class="h-6">
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer Placeholder -->
+    <footer class="bg-tech-gray py-8 mt-20">
+        <div class="container mx-auto px-4 text-center text-gray-400">
+            <p>&copy; 2026 TechWave. All rights reserved.</p>
+        </div>
+    </footer>
+
+</body>
+
+</html>
