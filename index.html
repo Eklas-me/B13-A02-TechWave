@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TechWave - Podcast Website</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="selection:bg-[rgba(26,11,46,1)] selection:text-white">
+    <!-- Navbar -->
+    <header class="fixed top-0 left-0 w-full z-50 glass-nav border-b border-white/5">
+        <div class="max-w-[1240px] mx-auto px-6 h-24 flex items-center justify-between">
+            <a href="#" class="flex items-center group">
+                <span class="text-3xl font-outfit font-black tracking-tight text-white leading-none">Tech<span
+                        class="logo-gradient">Wave</span></span>
+            </a>
+
+            <nav class="hidden md:absolute md:left-1/2 md:-translate-x-1/2 md:block">
+                <ul class="flex items-center gap-12">
+                    <li><a href="#about" class="nav-link">About</a></li>
+                    <li><a href="#episodes" class="nav-link">Episodes</a></li>
+                    <li><a href="#host" class="nav-link">Host</a></li>
+                </ul>
+            </nav>
+
+            <div class="hidden md:block">
+                <a href="#"
+                    class="btn-subscribe px-8 py-3 rounded-full font-bold text-sm tracking-wide text-white transition-all duration-300 inline-block shadow-lg">
+                    Subscribe →
+                </a>
+            </div>
+
+            <button class="md:hidden p-2 text-white">
+                <img src="assets/hamburger-menu.png" alt="Menu" class="w-8 h-8 brightness-0 invert"
+                    onerror="this.outerHTML='<svg xmlns=\'http://www.w3.org/2000/svg\' class=\'h-8 w-8\' fill=\'none\' viewBox=\'0 0 24 24\' stroke=\'currentColor\'><path stroke-linecap=\'round\' stroke-linejoin=\'round\' stroke-width=\'2\' d=\'M4 6h16M4 12h16m-7 6h7\' /></svg>'">
+            </button>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero-section">
+            <div class="relative z-10 flex flex-col items-center text-center animate-fade-in">
+                <div class="podcast-circle-wrapper">
+                    <div class="hero-waves">
+                        <img src="assets/hero-bg.png" alt="Sound Waves" class="w-full h-auto">
+                    </div>
+                    <div class="podcast-glow"></div>
+                    <div class="podcast-circle-main"></div>
+                    <img src="assets/microphone.png" alt="Microphone" class="microphone-icon">
+                    <div class="new-badge">NEW</div>
+                </div>
+
+                <h1 class="hero-title">TechWave</h1>
+                <p class="hero-subtitle">
+                    Your daily dose of tech insights, productivity hacks, and personal growth.
+                </p>
+
+                <div class="flex flex-col sm:flex-row items-center gap-6">
+                    <a href="#" class="btn-spotify-v2">
+                        <img src="assets/spotify.png" alt="Spotify" class="w-5 h-5 brightness-0 invert">
+                        Listen On Spotify
+                    </a>
+                    <a href="#" class="btn-subscribe-v2">
+                        <img src="assets/message.png" alt="Mail" class="mail-icon">
+                        Subscribe
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+</body>
+
+</html>
